@@ -40,12 +40,27 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(232, 197, 71, 0.06), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
 .project-card:hover {
   border-color: var(--accent);
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.01);
   box-shadow: 0 12px 32px rgba(232, 197, 71, 0.12);
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .project-media {
@@ -63,6 +78,20 @@
   border: 1px solid rgba(232, 197, 71, 0.25);
   border-radius: 8px;
   background: #0c1014;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+  animation: softFloat 6s ease-in-out infinite;
+}
+
+.project-media img:hover,
+.project-media video:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05) saturate(1.08);
+  box-shadow: 0 12px 28px rgba(232, 197, 71, 0.12);
+}
+
+@keyframes softFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
 }
 
 .project-header {
