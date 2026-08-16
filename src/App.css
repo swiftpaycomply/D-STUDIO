@@ -1,0 +1,76 @@
+@import './styles/globals.css';
+
+/* App Layout */
+.frame {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.frame main {
+  flex: 1;
+}
+
+main {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Container for content */
+.content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 20px;
+  }
+}
+
+.hero .gold {
+  color: var(--accent);
+}
+
+.hero .fade {
+  color: var(--muted);
+}
+
+.hero-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-bottom .intro {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 600px;
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+}

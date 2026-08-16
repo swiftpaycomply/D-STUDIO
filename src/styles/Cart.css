@@ -1,0 +1,139 @@
+/* Cart Page */
+.empty-cart {
+  text-align: center;
+  padding: 100px 40px;
+}
+
+.empty-cart h1 {
+  margin-bottom: 16px;
+}
+
+.empty-cart p {
+  margin-bottom: 32px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart-hero {
+  text-align: center;
+  padding: 60px 40px 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-hero h1 {
+  margin-bottom: 8px;
+}
+
+.cart-hero p {
+  margin: 0;
+  color: #a8adb4;
+  font-size: 14px;
+}
+
+.cart-content {
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.cart-items {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.cart-table thead {
+  background: rgba(232, 197, 71, 0.05);
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-table th {
+  text-align: left;
+  padding: 16px;
+  font-weight: 600;
+  color: var(--paper);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.cart-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cart-table tbody tr:hover {
+  background: rgba(232, 197, 71, 0.02);
+}
+
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--panel);
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  height: fit-content;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.summary-row.total {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 16px;
+}
+
+.button-block {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+}
+
+@media (max-width: 768px) {
+  .cart-hero {
+    padding: 40px 20px 30px;
+  }
+
+  .cart-content {
+    padding: 40px 20px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cart-table {
+    font-size: 12px;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    padding: 12px;
+  }
+
+  .button-block {
+    margin-top: 0;
+  }
+}

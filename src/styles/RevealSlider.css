@@ -1,0 +1,132 @@
+/* Reveal Slider */
+.reveal {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  aspect-ratio: 16 / 9;
+}
+
+.reveal picture {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.reveal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.reveal .before {
+  z-index: 1;
+}
+
+.reveal .after {
+  z-index: 2;
+}
+
+.reveal-divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+  z-index: 3;
+  cursor: ew-resize;
+  box-shadow: 0 0 12px rgba(232, 197, 71, 0.3);
+  transition: left 0.05s ease-out;
+}
+
+.reveal-label {
+  position: absolute;
+  background: rgba(18, 20, 23, 0.8);
+  color: var(--paper);
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  z-index: 4;
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+
+.label-before {
+  top: 16px;
+  left: 16px;
+}
+
+.label-after {
+  top: 16px;
+  right: 16px;
+}
+
+.reveal .range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 5;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+}
+
+.reveal .range::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: none;
+}
+
+.reveal .range::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: none;
+}
+
+.reveal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 12px;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reveal {
+    max-width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .reveal-label {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  .reveal-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
