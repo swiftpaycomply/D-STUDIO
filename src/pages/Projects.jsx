@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../styles/Projects.css'
 
 function Projects() {
@@ -10,8 +11,8 @@ function Projects() {
       technologies: ['Node.js', 'React', 'PostgreSQL'],
       image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80',
       video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
-      clientLink: null,
-      clientLabel: 'Client demo available on request'
+      clientLink: '/contact?project=Trading+Platform+Suite',
+      clientLabel: 'Request private demo'
     },
     {
       id: 2,
@@ -21,8 +22,8 @@ function Projects() {
       technologies: ['Node.js', 'React', 'MongoDB'],
       image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80',
       video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm',
-      clientLink: null,
-      clientLabel: 'Client demo available on request'
+      clientLink: '/contact?project=Casino+Management+System',
+      clientLabel: 'Request private demo'
     },
     {
       id: 3,
@@ -32,8 +33,8 @@ function Projects() {
       technologies: ['Python', 'TensorFlow', 'Node.js'],
       image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=1200&q=80',
       video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
-      clientLink: null,
-      clientLabel: 'Client demo available on request'
+      clientLink: '/contact?project=Media+Generation+Engine',
+      clientLabel: 'Request private demo'
     },
     {
       id: 4,
@@ -43,8 +44,8 @@ function Projects() {
       technologies: ['React', 'Node.js', 'Stripe API'],
       image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80',
       video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm',
-      clientLink: null,
-      clientLabel: 'Client demo available on request'
+      clientLink: '/contact?project=E-Commerce+Platform',
+      clientLabel: 'Request private demo'
     },
     {
       id: 5,
@@ -54,8 +55,8 @@ function Projects() {
       technologies: ['React', 'D3.js', 'Node.js'],
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
       video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
-      clientLink: null,
-      clientLabel: 'Client demo available on request'
+      clientLink: '/contact?project=Analytics+Dashboard',
+      clientLabel: 'Request private demo'
     },
     {
       id: 6,
@@ -65,8 +66,8 @@ function Projects() {
       technologies: ['React Native', 'Firebase'],
       image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80',
       video: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm',
-      clientLink: null,
-      clientLabel: 'Client demo available on request'
+      clientLink: '/contact?project=Mobile+App',
+      clientLabel: 'Request private demo'
     }
   ]
 
@@ -106,11 +107,9 @@ function Projects() {
                 ))}
               </div>
 
-              {project.clientLink ? (
-                <a href={project.clientLink} className="project-link" target="_blank" rel="noreferrer">Try client demo →</a>
-              ) : (
-                <span className="project-link muted-link">{project.clientLabel}</span>
-              )}
+              <Link to={project.clientLink} className="project-link">
+                {project.clientLabel} →
+              </Link>
             </div>
           ))}
         </div>
